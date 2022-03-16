@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_grupo_3">
         <activity
+            android:name=".Pantalla_Carrito"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Especificaciones_Orden"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Codigo_Mesa"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Pedido_Detalle"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Pedidos"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
