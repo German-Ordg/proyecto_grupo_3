@@ -32,13 +32,17 @@
         app:srcCompat="@mipmap/logo1" />
 
     <Spinner
+
         android:id="@+id/spinnerCombo"
         android:layout_width="148dp"
-        android:layout_height="33dp"
+        android:layout_height="30dp"
+
+        android:backgroundTint="#000000"
+        android:backgroundTintMode="screen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
