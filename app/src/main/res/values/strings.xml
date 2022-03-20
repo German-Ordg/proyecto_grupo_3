@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">proyecto_grupo_3</string>
+
+    <string name="napolitana_btn">Ordenar</string>
+    <string name="suprema_btn">Ordenar</string>
+    <string name="quesos_btn">Ordenar</string>
+    <string name="pepperoni_btn">Ordenar</string>
+
+    <string name="descripcionnapolitana">La Pizza mas clasica en el mundo,de Italia a tu mesa.</string>
+    <string name="descripcionpepperoni">Una Pizza estilo Americana, de ingredientes sencillos pero con mucho sabor.</string>
+    <string name="descripcionsuprema">Una Pizza de exelente sabor y muy variada en sus ingredientes.</string>
+    <string name="descripcionquesos">Esta Especialidad esta diseñada para los verdaderos amantes del queso.</string>
+
+
 </resources>
