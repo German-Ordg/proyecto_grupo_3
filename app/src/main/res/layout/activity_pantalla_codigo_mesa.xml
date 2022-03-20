@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintVertical_bias="0.638"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -52,6 +53,8 @@
         android:background="@color/design_default_color_secondary"
         android:shadowColor="@color/black"
         android:text="Continuar"
+        android:textColor="@color/white"
+        android:textColorHint="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -59,5 +62,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.793"
         app:rippleColor="@color/black"
-        app:strokeColor="@color/purple_500" />
+        app:strokeColor="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>
