@@ -27,12 +27,7 @@
 
         <activity
             android:name=".Pantalla_Pedidos"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            android:exported="false" >
         </activity>
         <activity
             android:name=".Pantalla_Login"
@@ -41,6 +36,15 @@
             android:name=".MainActivity"
             android:exported="false">
 
+        </activity>
+        <activity
+            android:name=".Menu_Detalles"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
