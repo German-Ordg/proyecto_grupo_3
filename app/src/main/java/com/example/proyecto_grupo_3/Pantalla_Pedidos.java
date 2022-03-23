@@ -31,7 +31,7 @@ public class Pantalla_Pedidos extends AppCompatActivity {
         if (!codigo.isEmpty()) {
 
             ContentValues registro = new ContentValues();//Contenedor de registro
-            registro.put("codigo", codigo);//insertar codigo en la tabla
+            registro.put("codigo_qr", codigo);//insertar codigo en la tabla
 
 
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
