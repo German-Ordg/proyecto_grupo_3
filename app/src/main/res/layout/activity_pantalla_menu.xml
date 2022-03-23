@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fondomenu1"
-    tools:context=".MainActivity">
+    tools:context=".Pantalla_Menu">
 
     <ImageView
         android:id="@+id/lgpizza"
@@ -79,9 +79,10 @@
                                 android:id="@+id/napolitana"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
+                                android:onClick="napolitana"
                                 android:backgroundTint="@color/black"
                                 android:text="@string/napolitana_btn"
-                                android:textColor="#E74C3C" />
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -136,6 +137,7 @@
                                 android:id="@+id/pepperoni"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
+                                android:onClick="pepperoni"
                                 android:backgroundTint="@color/black"
                                 android:text="@string/pepperoni_btn"
                                 android:textColor="@color/white" />
@@ -172,6 +174,7 @@
                             android:layout_height="50dp"
                             android:text="@string/descripcionsuprema"
                             android:textAlignment="center"
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -191,9 +194,10 @@
                                 android:id="@+id/suprema"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
+                                android:onClick="suprema"
                                 android:backgroundTint="@color/black"
                                 android:text="@string/suprema_btn"
-                                android:textColor="#2DAD12" />
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -227,6 +231,7 @@
                             android:layout_height="50dp"
                             android:text="@string/descripcionquesos"
                             android:textAlignment="center"
+                            android:textColor="@color/black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -246,9 +251,10 @@
                                 android:id="@+id/quesos"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
+                                android:onClick="queso"
                                 android:backgroundTint="@color/black"
                                 android:text="@string/quesos_btn"
-                                android:textColor="#F1C40F" />
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                     </LinearLayout>

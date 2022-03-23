@@ -10,4 +10,5 @@ public class Menu_Detalles extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_detalles);
     }
+
 }

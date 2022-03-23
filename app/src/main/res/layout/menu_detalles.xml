@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fondomenu1"
-    tools:context=".MainActivity">
+    tools:context=".Menu_Detalles">
 
     <ImageView
         android:id="@+id/lgpizza"
