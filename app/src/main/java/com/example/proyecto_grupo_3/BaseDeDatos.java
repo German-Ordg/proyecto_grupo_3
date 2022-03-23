@@ -28,11 +28,11 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 "codigo_producto integer not null, cantidad integer not null, precio real not null," +
                 " masa text not null, tamaño text not null," +
                 " foreign key(codigo_producto) references Productos(codigo_producto))");
-        BaseDeDatos.execSQL("create table Estado(codigo_estado integer primary key," +
+        BaseDeDatos.execSQL("create table Estado(codigo_estado integer primary key AUTOINCREMENT NOT NULL," +
                 "descripcion_estado text not null)");
-        BaseDeDatos.execSQL("create table Empleado_Puesto(codigo_puesto integer primary key," +
+        BaseDeDatos.execSQL("create table Empleado_Puesto(codigo_puesto integer primary key AUTOINCREMENT NOT NULL," +
                 "descripcion_puesto text not null)");
-        BaseDeDatos.execSQL("create table Empleados(codigo_empleado integer primary key," +
+        BaseDeDatos.execSQL("create table Empleados(codigo_empleado integer primary key AUTOINCREMENT NOT NULL," +
                 "codigo_puesto integer not null,nombre_empleado text not null,apellido_empleado text not null," +
                 "numero_identidad_empleado text not null," +
                 "fecha_nacimiento text,fecha_ingreso text not null,num_telefono text,genero text," +
