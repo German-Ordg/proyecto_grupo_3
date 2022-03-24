@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_grupo_3">
         <activity
+            android:name=".Detalles_Menu"
+            android:exported="false" />
+        <activity
             android:name=".Pantalla_Carrito"
             android:exported="false" />
         <activity
@@ -24,28 +27,15 @@
         <activity
             android:name=".Pantalla_Pedido_Detalle"
             android:exported="false" />
-
         <activity
             android:name=".Pantalla_Pedidos"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Pantalla_Login"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".Menu_Detalles"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

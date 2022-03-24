@@ -16,24 +16,24 @@ public class Pantalla_Menu extends AppCompatActivity {
 
     public void napolitana(View view)
     {
-        Intent Napolitana= new Intent(this,Menu_Detalles.class);
+        Intent Napolitana= new Intent(this,Detalles_Menu.class);
         startActivity(Napolitana);
     }
 
     public void pepperoni(View view)
     {
-        Intent Pepperoni= new Intent(this,Menu_Detalles.class);
+        Intent Pepperoni= new Intent(this,Detalles_Menu.class);
         startActivity(Pepperoni);
     }
 
     public void suprema(View view)
     {
-        Intent Suprema = new Intent(this,Menu_Detalles.class);
+        Intent Suprema = new Intent(this,Detalles_Menu.class);
         startActivity(Suprema);
     }
 
     public void queso(View view){
-        Intent Queso= new Intent(this,Menu_Detalles.class);
+        Intent Queso= new Intent(this,Detalles_Menu.class);
         startActivity(Queso);
     }
 }

@@ -79,8 +79,8 @@
                                 android:id="@+id/napolitana"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
-                                android:onClick="napolitana"
                                 android:backgroundTint="@color/black"
+                                android:onClick="napolitana"
                                 android:text="@string/napolitana_btn"
                                 android:textColor="@color/white" />
                         </LinearLayout>
@@ -137,8 +137,8 @@
                                 android:id="@+id/pepperoni"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
-                                android:onClick="pepperoni"
                                 android:backgroundTint="@color/black"
+                                android:onClick="pepperoni"
                                 android:text="@string/pepperoni_btn"
                                 android:textColor="@color/white" />
                         </LinearLayout>
@@ -194,8 +194,8 @@
                                 android:id="@+id/suprema"
                                 android:layout_width="154dp"
                                 android:layout_height="74dp"
-                                android:onClick="suprema"
                                 android:backgroundTint="@color/black"
+                                android:onClick="suprema"
                                 android:text="@string/suprema_btn"
                                 android:textColor="@color/white" />
                         </LinearLayout>
