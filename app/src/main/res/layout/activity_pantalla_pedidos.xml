@@ -63,15 +63,14 @@
 
                             <ImageView
                                 android:id="@+id/imageView6"
-                                android:layout_width="85dp"
-                                android:layout_height="85dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 app:srcCompat="@drawable/pedido" />
 
                             <Button
                                 android:id="@+id/btnmes1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:onClick="ingresar"
+                                android:layout_width="85dp"
+                                android:layout_height="40dp"
                                 android:text="@string/mesa1" />
                         </LinearLayout>
 
