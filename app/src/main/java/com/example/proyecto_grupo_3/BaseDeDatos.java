@@ -52,6 +52,15 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     //metodo upgrade
     @Override
     public void onUpgrade(SQLiteDatabase BaseDeDatos, int OldVersion, int NewVersion) {
-
     }
+
+
+    /*   //metodo llenar BD
+    public  void InsertCategoria(int codigo_categoria, String descripcion_categoria){
+        SQLiteDatabase db=  getWritableDatabase();
+
+        if (db!=null)
+    }*/
+
+
 }
