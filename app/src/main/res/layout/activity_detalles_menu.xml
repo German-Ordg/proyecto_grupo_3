@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/lgpizza"
-        android:layout_width="156dp"
-        android:layout_height="146dp"
+        android:layout_width="149dp"
+        android:layout_height="135dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -20,19 +20,19 @@
         app:srcCompat="@mipmap/pizzalogo2" />
 
     <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="545dp"
+        android:layout_width="411dp"
+        android:layout_height="529dp"
+        android:gravity="bottom"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989">
+        app:layout_constraintVertical_bias="0.683">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="523dp"
             android:clipToPadding="false"
             android:gravity="center">
 
@@ -58,7 +58,7 @@
                         <TextView
                             android:id="@+id/textView1"
                             android:layout_width="383dp"
-                            android:layout_height="45dp"
+                            android:layout_height="37dp"
                             android:text="@string/estilopizza"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -78,20 +78,23 @@
                                 <RadioButton
                                     android:id="@+id/rbmuydelgada"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Muy Delgada" />
+                                    android:layout_height="30dp"
+                                    android:text="Muy Delgada"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbdelgada"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Delgada" />
+                                    android:layout_height="30dp"
+                                    android:text="Delgada"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbpanpizza"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Pan Pizza" />
+                                    android:layout_height="30dp"
+                                    android:text="Pan Pizza"
+                                    tools:ignore="TouchTargetSizeCheck" />
                             </RadioGroup>
                         </LinearLayout>
 
@@ -124,7 +127,7 @@
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="383dp"
-                            android:layout_height="50dp"
+                            android:layout_height="34dp"
                             android:text="@string/orillapizza"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -144,14 +147,16 @@
                                 <RadioButton
                                     android:id="@+id/rborillanormal"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Normal" />
+                                    android:layout_height="30dp"
+                                    android:text="Normal"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rborillaqueso"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Orilla de Queso" />
+                                    android:layout_height="30dp"
+                                    android:text="Orilla de Queso"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                             </RadioGroup>
                         </LinearLayout>
@@ -165,7 +170,7 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="214dp"
                 android:layout_marginBottom="3dp"
                 android:gravity="center">
 
@@ -184,7 +189,7 @@
                         <TextView
                             android:id="@+id/textView3"
                             android:layout_width="380dp"
-                            android:layout_height="48dp"
+                            android:layout_height="33dp"
                             android:text="@string/tamanopizza"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -204,20 +209,23 @@
                                 <RadioButton
                                     android:id="@+id/rbpersonal"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Personal" />
+                                    android:layout_height="30dp"
+                                    android:text="Personal"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbgrande"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Grande" />
+                                    android:layout_height="30dp"
+                                    android:text="Grande"
+                                    tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbfamiliar"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Familiar" />
+                                    android:layout_height="30dp"
+                                    android:text="Familiar"
+                                    tools:ignore="TouchTargetSizeCheck" />
                             </RadioGroup>
                         </LinearLayout>
 
@@ -227,7 +235,98 @@
                 </androidx.cardview.widget.CardView>
 
             </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:clipToPadding="false"
+                android:gravity="center">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#A93226"
+                    app:cardCornerRadius="10dp"
+                    app:contentPaddingBottom="3dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="383dp"
+                            android:layout_height="37dp"
+                            android:text="Elige tu Mesa"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <RadioButton
+                                    android:id="@+id/rbmesa1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="@string/mesa1"
+                                    tools:ignore="TouchTargetSizeCheck" />
+
+                                <RadioButton
+                                    android:id="@+id/rbmesa2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="@string/mesa2"
+                                    tools:ignore="TouchTargetSizeCheck" />
+
+                                <RadioButton
+                                    android:id="@+id/rbmesa3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="@string/mesa3"
+                                    tools:ignore="TouchTargetSizeCheck" />
+
+                                <RadioButton
+                                    android:id="@+id/rbmesa4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:text="@string/mesa4"
+                                    tools:ignore="TouchTargetSizeCheck" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </TableRow>
         </TableLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/ingresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Realizar Pedido"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

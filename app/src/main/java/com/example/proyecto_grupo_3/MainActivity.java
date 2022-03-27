@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void pantalla_pedido(View view){
-        Intent pagina = new Intent(this,Pantalla_Pedido_Detalle.class);
-        startActivity(pagina);
+    public void Menu(View view){
+        Intent menu = new Intent(this,Pantalla_Menu.class);
+        startActivity(menu);
     }
 }
