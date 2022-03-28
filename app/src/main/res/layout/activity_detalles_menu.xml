@@ -128,7 +128,7 @@
                             android:id="@+id/textView2"
                             android:layout_width="383dp"
                             android:layout_height="34dp"
-                            android:text="@string/orillapizza"
+                            android:text="@string/cantpizza"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="16sp"
@@ -140,25 +140,18 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <RadioGroup
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
 
-                                <RadioButton
-                                    android:id="@+id/rborillanormal"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Normal"
-                                    tools:ignore="TouchTargetSizeCheck" />
-
-                                <RadioButton
-                                    android:id="@+id/rborillaqueso"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="30dp"
-                                    android:text="Orilla de Queso"
-                                    tools:ignore="TouchTargetSizeCheck" />
-
-                            </RadioGroup>
+                            <EditText
+                                android:id="@+id/editTextNumber2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="center_horizontal"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                     </LinearLayout>

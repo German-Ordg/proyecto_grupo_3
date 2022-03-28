@@ -1,5 +1,6 @@
 package com.example.proyecto_grupo_3;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -47,20 +48,12 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 " foreign key(codigo_estado) references Estado(codigo_estado)," +
                 "foreign key(numero_mesa) references Codigo_qr(numero_mesa)," +
                 "foreign key(codigo_orden) references Ordenes(codigo_orden))");
-    }
-
-    //metodo upgrade
-    @Override
-    public void onUpgrade(SQLiteDatabase BaseDeDatos, int OldVersion, int NewVersion) {
-    }
 
 
-    /*   //metodo llenar BD
-    public  void InsertCategoria(int codigo_categoria, String descripcion_categoria){
-        SQLiteDatabase db=  getWritableDatabase();
+        }
 
-        if (db!=null)
-    }*/
-
-
+        //metodo upgrade
+        @Override
+        public void onUpgrade (SQLiteDatabase BaseDeDatos,int OldVersion, int NewVersion){
+        }
 }
