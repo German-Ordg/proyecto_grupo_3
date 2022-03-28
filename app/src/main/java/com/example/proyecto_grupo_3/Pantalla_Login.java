@@ -37,16 +37,16 @@ public class Pantalla_Login extends AppCompatActivity {
                 String clave= fila.getString(1);
                 String puesto= fila.getString(2);
                 if (clave.equals(contra)){
-                    if (puesto.equals("Mesero")){
-                        Toast.makeText(this,"mesero",Toast.LENGTH_SHORT).show();
+                    if (puesto.equals("mesero")){
+                        Toast.makeText(this,"Mesero",Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
-                        Intent Menu= new Intent(this,Pantalla_Menu.class);
+                        Intent Menu= new Intent(this,Pantalla_pedido.class);
                         startActivity(Menu);
                     }
-                    if (puesto.equals("Cajero")){
+                    if (puesto.equals("cajero")){
                         Toast.makeText(this,"Cajero ",Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
-                        Intent detalle= new Intent(this,Pantalla_Pedido_Detalle.class);
+                        Intent detalle= new Intent(this,Pantalla_pedido2.class);
                         startActivity(detalle);
 
                     }else{Toast.makeText(this,"No tenes puesto "+puesto,Toast.LENGTH_SHORT).show();}
