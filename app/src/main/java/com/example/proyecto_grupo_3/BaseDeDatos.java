@@ -2,6 +2,7 @@ package com.example.proyecto_grupo_3;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -67,8 +68,46 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
         }
 
+
+
         //metodo upgrade
         @Override
         public void onUpgrade (SQLiteDatabase BaseDeDatos,int OldVersion, int NewVersion){
+        }
+
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------
+
+        public void agregardatos(int codigo_producto, int cantidad, double precio, String masa, String tamaño)
+        {
+            SQLiteDatabase bd= getWritableDatabase();
+
+            if(bd != null){
+                bd.execSQL("insert into Ordenes (codigo_producto, cantidad, precio, masa, tamaño) " +
+                        "values ("+codigo_producto+","+cantidad+","+precio+",'"+masa+"','"+tamaño+"')");
+            }
+        }
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------
+        public void agregarmesa(int codigo_orden, int codigo_estado, int numero_mesa)
+        {
+            SQLiteDatabase bd= getWritableDatabase();
+
+            int dato;
+
+            bd.execSQL("select max (codigo_orden) from Ordenes order by codigo_producto");
+
+            Cursor cursor= bd.rawQuery("Select max(codigo_orden) from Ordenes order by codigo_producto", null);
+
+            dato= Integer.parseInt(cursor.getString(0));
+
+            if(bd != null){
+                bd.execSQL("insert into Pedidos (codigo_orden, codigo_estado, precio, masa, tamaño) " +
+                        "values ("+(dato + 1)+","+codigo_estado+","+numero_mesa+")");
+            }
         }
 }
