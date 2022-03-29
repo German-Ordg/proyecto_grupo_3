@@ -80,7 +80,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
         //---------------------------------------------------------------------------------------------------------------------
 
-        public void agregardatos(int codigo_producto, int cantidad, double precio, String masa, String tamaño)
+        public SQLiteDatabase agregardatos(int codigo_producto, int cantidad, double precio, String masa, String tamaño)
         {
             SQLiteDatabase bd= getWritableDatabase();
 
@@ -88,6 +88,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 bd.execSQL("insert into Ordenes (codigo_producto, cantidad, precio, masa, tamaño) " +
                         "values ("+codigo_producto+","+cantidad+","+precio+",'"+masa+"','"+tamaño+"')");
             }
+            return bd;
         }
 
 
