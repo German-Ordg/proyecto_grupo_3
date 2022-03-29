@@ -114,9 +114,39 @@ public class Detalles_Menu extends AppCompatActivity {
         }
 
         BaseDeDatos admin= new BaseDeDatos(this, "administrador", null, 1);
-        SQLiteDatabase BaseDatos= base.agregardatos(codigo,Integer.parseInt(cantidad.toString()), precio, tipomasa, tipotamano);
+        //SQLiteDatabase BaseDatos= admin.getWritableDatabase();
+        base.agregardatos(codigo, Integer.parseInt(cantidad.toString()), precio, tipomasa, tipotamano);
+
     }
 
+    /*public void ingresar(View view) {
+        adminSQLiteOpen admin = new adminSQLiteOpen(this, "Aministrador", null, 1);
+        //conexion a base de datos
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();//base de datos, estado de escritura
 
+        String codigo = ob_codigo.getText().toString();
+        String nombre = ob_nombre.getText().toString();
+        String campus = ob_campus.getText().toString();
+
+        if (!codigo.isEmpty() && !nombre.isEmpty() && !campus.isEmpty()) {
+
+            ContentValues registro = new ContentValues();//Contenedor de registro
+            registro.put("codigo", codigo);//insertar codigo en la tabla
+            registro.put("nombre",nombre);//insertar nombre en la tabla
+            registro.put("campus", campus);//insertar campus en la tabla
+
+            Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+            BaseDeDatos.insert("Registro", null, registro);
+            BaseDeDatos.close();
+
+        } else{
+            Toast.makeText(this, "Todos los campus deben llenarse", Toast.LENGTH_SHORT).show();
+        }
+        ob_codigo.setText("");
+        ob_nombre.setText("");
+        ob_campus.setText("");
+
+
+    }*/
 
 }

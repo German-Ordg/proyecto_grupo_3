@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -84,11 +85,17 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         {
             SQLiteDatabase bd= getWritableDatabase();
 
+            //bd.isOpen();
             if(bd != null){
                 bd.execSQL("insert into Ordenes (codigo_producto, cantidad, precio, masa, tamaño) " +
                         "values ("+codigo_producto+","+cantidad+","+precio+",'"+masa+"','"+tamaño+"')");
+
+                //Toast.makeText(this, "Datos Guardados", Toast.LENGTH_LONG).show();
+
+                bd.close();
             }
             return bd;
+
         }
 
 
@@ -109,6 +116,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
             if(bd != null){
                 bd.execSQL("insert into Pedidos (codigo_orden, codigo_estado, precio, masa, tamaño) " +
                         "values ("+(dato + 1)+","+codigo_estado+","+numero_mesa+")");
+
             }
         }
 }
