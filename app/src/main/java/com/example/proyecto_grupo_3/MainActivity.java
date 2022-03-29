@@ -17,16 +17,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
-                R.array.Combo, android.R.layout.simple_spinner_item);
-        Combo.setAdapter(adapter);
-
     }
 
-    public void pantalla_pedido(View view){
-        Intent pagina = new Intent(this,Pantalla_Pedido_Detalle.class);
+    public void Cliente(View view){
+        Intent pagina = new Intent(this,Pantalla_Menu.class);
+        startActivity(pagina);
+    }
+    public void Empleado(View view){
+        Intent pagina = new Intent(this,Pantalla_Login.class);
         startActivity(pagina);
     }
 }

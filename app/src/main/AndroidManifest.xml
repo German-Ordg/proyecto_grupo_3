@@ -30,16 +30,20 @@
             android:exported="false" >
         </activity>
         <activity
-            android:name=".Pantalla_Login"
+            android:name=".Menu_Detalles"
+
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Pantalla_Login"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false">
 
         </activity>
         <activity
-            android:name=".Menu_Detalles"
-            android:exported="true" >
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

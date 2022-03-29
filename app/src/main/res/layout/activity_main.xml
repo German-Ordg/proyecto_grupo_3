@@ -8,18 +8,33 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btningresar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnEmpleado"
+        android:layout_width="178dp"
+        android:layout_height="121dp"
         android:backgroundTint="#FF0000"
-        android:onClick="menu"
-        android:text="ingresar"
+        android:onClick="Empleado"
+        android:text="Empleado"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.746" />
+
+    <Button
+        android:id="@+id/btnCliente"
+        android:layout_width="178dp"
+        android:layout_height="121dp"
+        android:backgroundTint="#FF0000"
+        android:onClick="Cliente"
+        android:text="Cliente"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
 
     <ImageView
         android:id="@+id/logo1"
@@ -31,29 +46,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026"
         app:srcCompat="@mipmap/logo1" />
-
-    <Spinner
-
-        android:id="@+id/combobox"
-        android:layout_width="148dp"
-        android:layout_height="30dp"
-
-        android:backgroundTint="#FF0000"
-        android:backgroundTintMode="screen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ToggleButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
