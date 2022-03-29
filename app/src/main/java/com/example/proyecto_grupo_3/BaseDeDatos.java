@@ -50,6 +50,21 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 "foreign key(codigo_orden) references Ordenes(codigo_orden))");
 
 
+        BaseDeDatos.execSQL("insert into Categoria_Producto (descripcion_categoria) values ('Pizza') ");
+
+        BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('1') ");
+        BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('2') ");
+        BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('3') ");
+        BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('4') ");
+
+        BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Pendiente') ");
+        BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Entregado') ");
+
+        BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Napolitana',150) ");
+        BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Pepperoni',160) ");
+        BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Suprema',170) ");
+        BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Quesos',150) ");
+
         }
 
         //metodo upgrade

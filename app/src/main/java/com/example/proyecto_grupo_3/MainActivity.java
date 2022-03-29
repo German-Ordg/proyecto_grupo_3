@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase BaseDatos= admin.getWritableDatabase();
 
 
+
         /*ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
                 R.array.Combo, android.R.layout.simple_spinner_item);
         Combo.setAdapter(adapter);*/
