@@ -43,13 +43,13 @@ public class Pantalla_Login extends AppCompatActivity {
                         Intent Menu= new Intent(this,Pantalla_pedido.class);
                         startActivity(Menu);
                     }
-                    if (puesto.equals("cajero")){
+                    else if (puesto.equals("cajero")){
                         Toast.makeText(this,"Cajero ",Toast.LENGTH_SHORT).show();
                         BaseDeDatos.close();
                         Intent detalle= new Intent(this,Pantalla_pedido2.class);
                         startActivity(detalle);
 
-                    }else{Toast.makeText(this,"No tenes puesto "+puesto,Toast.LENGTH_SHORT).show();}
+                    }else{Toast.makeText(this,"No tienes puesto "+puesto,Toast.LENGTH_SHORT).show();}
 
 
                 }else{
