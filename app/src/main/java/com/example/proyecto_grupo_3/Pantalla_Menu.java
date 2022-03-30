@@ -23,7 +23,7 @@ public class Pantalla_Menu extends AppCompatActivity {
     {
         tipo= "Napolitana";
         Intent Napolitana= new Intent(this,Detalles_Menu.class);
-        Napolitana.putExtra("dato", tipo);
+        Napolitana.putExtra("dato",tipo);
         startActivity(Napolitana);
     }
 

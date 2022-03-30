@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.proyecto_grupo_3.BaseDeDatos;
 
 
@@ -50,103 +52,87 @@ public class Detalles_Menu extends AppCompatActivity {
         pizza.setText(dato);
     }
 
-    public void ingresar(View view){
+    public void ingresar(View view) {
         //Variables
-        int codigo;
-        double precio;
-        String tipomasa;
-        String tipotamano;
+        int codigo = 0;
+        float precio = 0;
+        String tipomasa = "";
+        String tipotamano = "";
 
 
         //Metodos Get
-        cantidad= (EditText)findViewById(R.id.txtcantidad);
-        masa= (RadioGroup)findViewById(R.id.rgmasa);
-        tamano= (RadioGroup)findViewById(R.id.rgtamaño);
-        mesa= (RadioGroup)findViewById(R.id.rgmesa);
+        cantidad = (EditText) findViewById(R.id.txtcantidad);
+        masa = (RadioGroup) findViewById(R.id.rgmasa);
+        tamano = (RadioGroup) findViewById(R.id.rgtamaño);
+        mesa = (RadioGroup) findViewById(R.id.rgmesa);
 
-        masa1= (RadioButton)findViewById(R.id.rbmuydelgada);
-        masa2= (RadioButton)findViewById(R.id.rbdelgada);
-        masa3= (RadioButton)findViewById(R.id.rbpanpizza);
+        masa1 = (RadioButton) findViewById(R.id.rbmuydelgada);
+        masa2 = (RadioButton) findViewById(R.id.rbdelgada);
+        masa3 = (RadioButton) findViewById(R.id.rbpanpizza);
 
-        tam1= (RadioButton)findViewById(R.id.rbpersonal);
-        tam2= (RadioButton)findViewById(R.id.rbgrande);
-        tam3= (RadioButton)findViewById(R.id.rbfamiliar);
+        tam1 = (RadioButton) findViewById(R.id.rbpersonal);
+        tam2 = (RadioButton) findViewById(R.id.rbgrande);
+        tam3 = (RadioButton) findViewById(R.id.rbfamiliar);
 
-
-
-
+        String dato = getIntent().getStringExtra("dato");
+        int numero = Integer.parseInt(cantidad.getText().toString());
 
         //If Especialidad de la Pizza
-        if(pizza.toString() == "Napolitana"){
-            codigo=1;
-            precio= 150;
+        if (dato == "Napolitana") {
+            codigo = 1;
+            precio = 150;
+        } else if (dato == "Pepperoni") {
+            codigo = 2;
+            precio = 160;
+        } else if (dato == "Suprema") {
+            codigo = 3;
+            precio = 170;
+        } else if (dato == "Queso") {
+            codigo = 4;
+            precio = 150;
         }
-        else if (pizza.toString()== "Pepperoni"){
-            codigo=2;
-            precio= 160;
-        }else if (pizza.toString()== "Suprema"){
-            codigo=3;
-            precio= 170;
-        }else{
-            codigo=4;
-            precio= 150;
+        else
+        {
+            codigo = 5;
+            precio = 150;
         }
-
-
 
         //If Grosor de la masa
-        if(masa1.isChecked()){
-            tipomasa= "Muy Delgada";
-        }else if(masa2.isChecked()){
-            tipomasa= "Delgada";
-        }else{
-            tipomasa= "Pan Pizza";
+        if (masa1.isChecked()) {
+            tipomasa = "Muy Delgada";
+        } else if (masa2.isChecked()) {
+            tipomasa = "Delgada";
+        } else if (masa3.isChecked()) {
+            tipomasa = "Pan Pizza";
         }
-
 
         //If Tamaño de la Pizza
-        if(tam1.isChecked()){
-            tipotamano= "Personal";
-        }else if(tam2.isChecked()){
-            tipotamano= "Grande";
-        }else{
-            tipotamano= "Familiar";
+        if (tam1.isChecked()) {
+            tipotamano = "Personal";
+        } else if (tam2.isChecked()) {
+            tipotamano = "Grande";
+        } else if (tam3.isChecked()) {
+            tipotamano = "Familiar";
         }
 
-        BaseDeDatos admin= new BaseDeDatos(this, "administrador", null, 1);
-        //SQLiteDatabase BaseDatos= admin.getWritableDatabase();
-        base.agregardatos(codigo, Integer.parseInt(cantidad.toString()), precio, tipomasa, tipotamano);
+        BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-    }
 
-    /*public void ingresar(View view) {
-        adminSQLiteOpen admin = new adminSQLiteOpen(this, "Aministrador", null, 1);
-        //conexion a base de datos
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();//base de datos, estado de escritura
-
-        String codigo = ob_codigo.getText().toString();
-        String nombre = ob_nombre.getText().toString();
-        String campus = ob_campus.getText().toString();
-
-        if (!codigo.isEmpty() && !nombre.isEmpty() && !campus.isEmpty()) {
-
-            ContentValues registro = new ContentValues();//Contenedor de registro
-            registro.put("codigo", codigo);//insertar codigo en la tabla
-            registro.put("nombre",nombre);//insertar nombre en la tabla
-            registro.put("campus", campus);//insertar campus en la tabla
+       if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty()) {
+            ContentValues ordenes = new ContentValues();
+           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+            ordenes.put("codigo_producto", codigo);
+            ordenes.put("cantidad", numero);
+            ordenes.put("precio", precio);
+            ordenes.put("masa", tipomasa);
+            ordenes.put("tamaño", tipotamano);
 
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
-            BaseDeDatos.insert("Registro", null, registro);
+            BaseDeDatos.insert("Ordenes", null, ordenes);
             BaseDeDatos.close();
-
-        } else{
-            Toast.makeText(this, "Todos los campus deben llenarse", Toast.LENGTH_SHORT).show();
+            }else if(codigo == 0 || cantidad==null || precio==0 || tipomasa=="" || tipotamano==""){
+               Toast.makeText(this,"Todos los campos deben llenarse", Toast.LENGTH_SHORT).show();
+            }
         }
-        ob_codigo.setText("");
-        ob_nombre.setText("");
-        ob_campus.setText("");
-
-
-    }*/
-
-}
+    }

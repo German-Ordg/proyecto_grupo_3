@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fondomenu1"
+    android:onClick="ingresar"
     tools:context=".Detalles_Menu">
 
     <ImageView
@@ -128,7 +129,7 @@
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="383dp"
-                            android:layout_height="34dp"
+                            android:layout_height="43dp"
                             android:text="@string/cantpizza"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -335,6 +336,7 @@
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"

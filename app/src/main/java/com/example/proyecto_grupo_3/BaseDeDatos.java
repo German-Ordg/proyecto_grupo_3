@@ -81,7 +81,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
         //---------------------------------------------------------------------------------------------------------------------
 
-        public SQLiteDatabase agregardatos(int codigo_producto, int cantidad, double precio, String masa, String tamaño)
+       /* public SQLiteDatabase agregardatos(int codigo_producto, int cantidad, double precio, String masa, String tamaño)
         {
             SQLiteDatabase bd= getWritableDatabase();
 
@@ -96,12 +96,12 @@ public class BaseDeDatos extends SQLiteOpenHelper {
             }
             return bd;
 
-        }
+        }*/
 
 
 
         //---------------------------------------------------------------------------------------------------------------------
-        public void agregarmesa(int codigo_orden, int codigo_estado, int numero_mesa)
+        /*public void agregarmesa(int codigo_orden, int codigo_estado, int numero_mesa)
         {
             SQLiteDatabase bd= getWritableDatabase();
 
@@ -118,5 +118,5 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                         "values ("+(dato + 1)+","+codigo_estado+","+numero_mesa+")");
 
             }
-        }
+        }*/
 }
