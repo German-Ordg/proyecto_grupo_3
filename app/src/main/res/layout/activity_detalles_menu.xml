@@ -151,6 +151,7 @@
                                 android:ems="10"
                                 android:gravity="center_horizontal"
                                 android:inputType="number"
+                                android:text="1"
                                 android:textColor="@color/black"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -276,28 +277,28 @@
                                     android:id="@+id/rbmesa1"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="@string/mesa1"
+                                    android:text="Mesa 1"
                                     tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbmesa2"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="@string/mesa2"
+                                    android:text="Mesa 2"
                                     tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbmesa3"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="@string/mesa3"
+                                    android:text="Mesa 3"
                                     tools:ignore="TouchTargetSizeCheck" />
 
                                 <RadioButton
                                     android:id="@+id/rbmesa4"
                                     android:layout_width="match_parent"
                                     android:layout_height="30dp"
-                                    android:text="@string/mesa4"
+                                    android:text="Mesa 4"
                                     tools:ignore="TouchTargetSizeCheck" />
                             </RadioGroup>
                         </LinearLayout>
@@ -333,15 +334,16 @@
         android:layout_height="28dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
+        android:inputType="text"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113" />
+        app:layout_constraintVertical_bias="0.113"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

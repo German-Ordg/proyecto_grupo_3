@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +16,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.sql.Connection;
 
 import com.example.proyecto_grupo_3.BaseDeDatos;
+
+import java.sql.ResultSet;
 
 
 public class Detalles_Menu extends AppCompatActivity {
@@ -60,10 +64,11 @@ public class Detalles_Menu extends AppCompatActivity {
     public void ingresar(View view) {
         //Variables
         int codigo = 0;
+        int codigo_orden=0;
         float precio = 0;
         String tipomasa = "";
         String tipotamano = "";
-
+        int numeromesa;
 
         //Metodos Get
         cantidad = (EditText) findViewById(R.id.txtcantidad);
@@ -84,28 +89,37 @@ public class Detalles_Menu extends AppCompatActivity {
         mesa3 = (RadioButton) findViewById(R.id.rbmesa3);
         mesa4 = (RadioButton) findViewById(R.id.rbmesa4);
 
-        String dato = getIntent().getStringExtra("dato");
         int numero = Integer.parseInt(cantidad.getText().toString());
 
+
+        /*BaseDeDatos bd = new BaseDeDatos(this, "administrador", null, 1);
+        SQLiteDatabase base = bd.getReadableDatabase();
+
+        Cursor cursor= base.rawQuery("select max(codigo_orden +1) from Ordenes", null);
+
+        codigo_orden= Integer.parseInt(cursor.getString(0));
+
+        Pantalla_Menu menu= new Pantalla_Menu();*/
+
         //If Especialidad de la Pizza
-        if (dato == "Napolitana") {
+        if (pizza.length() == 10) {
             codigo = 1;
             precio = 150;
-        } else if (dato == "Pepperoni") {
+        } else if (pizza.length() == 9) {
             codigo = 2;
             precio = 160;
-        } else if (dato == "Suprema") {
+        } else if (pizza.length() == 7) {
             codigo = 3;
             precio = 170;
-        } else if (dato == "Queso") {
+        } else if (pizza.length() == 5) {
             codigo = 4;
             precio = 150;
         }
         else
         {
-            codigo = 5;
-            precio = 150;
+            Toast.makeText(this,"ERROR", Toast.LENGTH_SHORT).show();
         }
+
 
         //If Grosor de la masa
         if (masa1.isChecked()) {
@@ -125,10 +139,30 @@ public class Detalles_Menu extends AppCompatActivity {
             tipotamano = "Familiar";
         }
 
+        if(mesa1.isChecked()){
+            numeromesa= 1;
+        }else if(mesa2.isChecked()){
+            numeromesa= 2;
+        }else if(mesa3.isChecked()){
+            numeromesa= 3;
+        }else{
+            numeromesa=4;
+        }
+
+
+
+        //Base en modo escritura
         BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
 
+        //BaseDeDatos.execSQL("SELECT max (codigo_orden) from Ordenes", null);
+
+        //ResultSet resultSet= BaseDeDatos.execSQL("Select max(codigo_orden) from Ordenes");
+
+
+
+       //Ingresar Ordenes
        if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty()) {
             ContentValues ordenes = new ContentValues();
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
@@ -140,29 +174,35 @@ public class Detalles_Menu extends AppCompatActivity {
 
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
             BaseDeDatos.insert("Ordenes", null, ordenes);
+
+           //Ingresar Pedidos
+           ContentValues pedidos = new ContentValues();
+           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+           pedidos.put("codigo_orden", codigo_orden+1);
+           pedidos.put("codigo_estado", 1);
+           pedidos.put("numero_mesa", numeromesa);
+
+           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+           BaseDeDatos.insert("Pedidos", null, pedidos);
+
+           //Cerrar Base de Datos
             BaseDeDatos.close();
-            }else if(codigo == 0 || cantidad== null || precio==0 || tipomasa=="" || tipotamano==""){
 
-            Toast.makeText(this,"Todos los campos deben llenarse", Toast.LENGTH_SHORT).show();
 
-                //codigo == 0 || cantidad== null || precio==0 || tipomasa=="" || tipotamano==""
+            //Validacion Campos Vacios
+            }if(masa1.isChecked()==false){masa1.setError("Seleccione una opcion");}
+                if(masa2.isChecked()==false){masa2.setError("Seleccione una opcion");}
+                if(masa3.isChecked()==false){masa3.setError("Seleccione una opcion");}
 
-                //cantidad.toString().isEmpty() || masa1.isChecked()==false && masa2.isChecked()==false && masa3.isChecked()==false && tam1.isChecked()==false && tam2.isChecked()==false && tam3.isChecked()==false && mesa1.isChecked()== false && mesa2.isChecked()== false && mesa3.isChecked()== false && mesa4.isChecked()== false)
+                if(tam1.isChecked()==false){tam1.setError("Seleccione una opcion");}
+                if(tam2.isChecked()==false){tam2.setError("Seleccione una opcion");}
+                if(tam3.isChecked()==false){tam3.setError("Seleccione una opcion");}
 
-                /*cantidad.setError("Ingrese una Cantidad");
+                if(mesa1.isChecked()==false){mesa1.setError("Seleccione una opcion");}
+                if(mesa2.isChecked()==false){mesa2.setError("Seleccione una opcion");}
+                if(mesa3.isChecked()==false){mesa3.setError("Seleccione una opcion");}
+                if(mesa4.isChecked()==false){mesa4.setError("Seleccione una opcion");
 
-                masa1.setError("Seleccione una opcion");
-                masa2.setError("Seleccione una opcion");
-                masa3.setError("Seleccione una opcion");
-
-                tam1.setError("Seleccione una opcion");
-                tam2.setError("Seleccione una opcion");
-                tam3.setError("Seleccione una opcion");
-
-                mesa1.setError("Seleccione una opcion");
-                mesa2.setError("Seleccione una opcion");
-                mesa3.setError("Seleccione una opcion");
-                mesa4.setError("Seleccione una opcion");*/
-            }
-        }
+       }
     }
+}

@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 public class Pantalla_Menu extends AppCompatActivity {
 
     private String tipo;
+    private int num;
 
     @Override
     protected  void onCreate(Bundle savedInstanceState){
