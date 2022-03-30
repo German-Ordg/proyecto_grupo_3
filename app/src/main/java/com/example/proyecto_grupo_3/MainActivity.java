@@ -21,13 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BaseDeDatos admin= new BaseDeDatos(this,"administrador", null,1);
         SQLiteDatabase BaseDatos= admin.getWritableDatabase();
-
-
-
-        /*ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
-                R.array.Combo, android.R.layout.simple_spinner_item);
-        Combo.setAdapter(adapter);*/
-
     }
 
     public void Menu(View view){

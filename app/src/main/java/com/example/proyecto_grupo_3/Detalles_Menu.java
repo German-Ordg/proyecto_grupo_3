@@ -36,6 +36,11 @@ public class Detalles_Menu extends AppCompatActivity {
     private RadioButton tam2;
     private RadioButton tam3;
 
+    private RadioButton mesa1;
+    private RadioButton mesa2;
+    private RadioButton mesa3;
+    private RadioButton mesa4;
+
     //BaseDeDatos base= new BaseDeDatos();
     BaseDeDatos base;
 
@@ -73,6 +78,11 @@ public class Detalles_Menu extends AppCompatActivity {
         tam1 = (RadioButton) findViewById(R.id.rbpersonal);
         tam2 = (RadioButton) findViewById(R.id.rbgrande);
         tam3 = (RadioButton) findViewById(R.id.rbfamiliar);
+
+        mesa1 = (RadioButton) findViewById(R.id.rbmesa1);
+        mesa2 = (RadioButton) findViewById(R.id.rbmesa2);
+        mesa3 = (RadioButton) findViewById(R.id.rbmesa3);
+        mesa4 = (RadioButton) findViewById(R.id.rbmesa4);
 
         String dato = getIntent().getStringExtra("dato");
         int numero = Integer.parseInt(cantidad.getText().toString());
@@ -121,7 +131,7 @@ public class Detalles_Menu extends AppCompatActivity {
 
        if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty()) {
             ContentValues ordenes = new ContentValues();
-           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
             ordenes.put("codigo_producto", codigo);
             ordenes.put("cantidad", numero);
             ordenes.put("precio", precio);
@@ -131,8 +141,28 @@ public class Detalles_Menu extends AppCompatActivity {
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
             BaseDeDatos.insert("Ordenes", null, ordenes);
             BaseDeDatos.close();
-            }else if(codigo == 0 || cantidad==null || precio==0 || tipomasa=="" || tipotamano==""){
-               Toast.makeText(this,"Todos los campos deben llenarse", Toast.LENGTH_SHORT).show();
+            }else if(codigo == 0 || cantidad== null || precio==0 || tipomasa=="" || tipotamano==""){
+
+            Toast.makeText(this,"Todos los campos deben llenarse", Toast.LENGTH_SHORT).show();
+
+                //codigo == 0 || cantidad== null || precio==0 || tipomasa=="" || tipotamano==""
+
+                //cantidad.toString().isEmpty() || masa1.isChecked()==false && masa2.isChecked()==false && masa3.isChecked()==false && tam1.isChecked()==false && tam2.isChecked()==false && tam3.isChecked()==false && mesa1.isChecked()== false && mesa2.isChecked()== false && mesa3.isChecked()== false && mesa4.isChecked()== false)
+
+                /*cantidad.setError("Ingrese una Cantidad");
+
+                masa1.setError("Seleccione una opcion");
+                masa2.setError("Seleccione una opcion");
+                masa3.setError("Seleccione una opcion");
+
+                tam1.setError("Seleccione una opcion");
+                tam2.setError("Seleccione una opcion");
+                tam3.setError("Seleccione una opcion");
+
+                mesa1.setError("Seleccione una opcion");
+                mesa2.setError("Seleccione una opcion");
+                mesa3.setError("Seleccione una opcion");
+                mesa4.setError("Seleccione una opcion");*/
             }
         }
     }
