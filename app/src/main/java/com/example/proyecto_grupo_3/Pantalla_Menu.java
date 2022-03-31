@@ -22,33 +22,29 @@ public class Pantalla_Menu extends AppCompatActivity {
 
     public void napolitana(View view)
     {
-        tipo= "Napolitana";
         Intent Napolitana= new Intent(this,Detalles_Menu.class);
-        Napolitana.putExtra("dato",tipo);
+        Napolitana.putExtra("dato","Napolitana");
         startActivity(Napolitana);
     }
 
     public void pepperoni(View view)
     {
-        tipo= "Pepperoni";
         Intent Pepperoni= new Intent(this,Detalles_Menu.class);
-        Pepperoni.putExtra("dato", tipo);
+        Pepperoni.putExtra("dato", "Pepperoni");
         startActivity(Pepperoni);
     }
 
     public void suprema(View view)
     {
-        tipo= "Suprema";
         Intent Suprema = new Intent(this,Detalles_Menu.class);
-        Suprema.putExtra("dato", tipo);
+        Suprema.putExtra("dato", "Suprema");
         startActivity(Suprema);
     }
 
     public void queso(View view)
     {
-        tipo= "Queso";
         Intent Queso= new Intent(this,Detalles_Menu.class);
-        Queso.putExtra("dato", tipo);
+        Queso.putExtra("dato", "Queso");
         startActivity(Queso);
     }
 

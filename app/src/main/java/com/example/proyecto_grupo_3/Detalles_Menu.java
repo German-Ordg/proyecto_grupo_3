@@ -3,6 +3,7 @@ package com.example.proyecto_grupo_3;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.se.omapi.Reader;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -21,6 +23,7 @@ import java.sql.Connection;
 import com.example.proyecto_grupo_3.BaseDeDatos;
 
 import java.sql.ResultSet;
+import java.sql.SQLData;
 
 
 public class Detalles_Menu extends AppCompatActivity {
@@ -156,17 +159,11 @@ public class Detalles_Menu extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
 
-        //BaseDeDatos.execSQL("SELECT max (codigo_orden) from Ordenes", null);
-
-        //ResultSet resultSet= BaseDeDatos.execSQL("Select max(codigo_orden) from Ordenes");
-
-
-
        //Ingresar Ordenes
        if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty()) {
             ContentValues ordenes = new ContentValues();
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
-            ordenes.put("codigo_producto", codigo);
+            ordenes.put("codigo_producto ", codigo);
             ordenes.put("cantidad", numero);
             ordenes.put("precio", precio);
             ordenes.put("masa", tipomasa);
@@ -175,10 +172,19 @@ public class Detalles_Menu extends AppCompatActivity {
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
             BaseDeDatos.insert("Ordenes", null, ordenes);
 
+
+           Cursor c = BaseDeDatos.rawQuery("SELECT max(codigo_orden) from Ordenes", null);
+
+           if (c != null) {
+               c.moveToFirst();
+               do {
+                   //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
+                   @SuppressLint("Range") String orden = c.getString(c.getColumnIndex("max(codigo_orden)"));
+
            //Ingresar Pedidos
            ContentValues pedidos = new ContentValues();
            Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
-           pedidos.put("codigo_orden", codigo_orden+1);
+           pedidos.put("codigo_orden", orden);
            pedidos.put("codigo_estado", 1);
            pedidos.put("numero_mesa", numeromesa);
 
@@ -187,7 +193,8 @@ public class Detalles_Menu extends AppCompatActivity {
 
            //Cerrar Base de Datos
             BaseDeDatos.close();
-
+               } while (c.moveToNext());
+           }
 
             //Validacion Campos Vacios
             }if(masa1.isChecked()==false){masa1.setError("Seleccione una opcion");}
