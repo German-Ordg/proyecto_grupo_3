@@ -48,7 +48,6 @@ public class Detalles_Menu extends AppCompatActivity {
     private RadioButton mesa3;
     private RadioButton mesa4;
 
-    //BaseDeDatos base= new BaseDeDatos();
     BaseDeDatos base;
 
 
@@ -93,16 +92,6 @@ public class Detalles_Menu extends AppCompatActivity {
         mesa4 = (RadioButton) findViewById(R.id.rbmesa4);
 
         int numero = Integer.parseInt(cantidad.getText().toString());
-
-
-        /*BaseDeDatos bd = new BaseDeDatos(this, "administrador", null, 1);
-        SQLiteDatabase base = bd.getReadableDatabase();
-
-        Cursor cursor= base.rawQuery("select max(codigo_orden +1) from Ordenes", null);
-
-        codigo_orden= Integer.parseInt(cursor.getString(0));
-
-        Pantalla_Menu menu= new Pantalla_Menu();*/
 
         //If Especialidad de la Pizza
         if (pizza.length() == 10) {
@@ -151,8 +140,6 @@ public class Detalles_Menu extends AppCompatActivity {
         }else{
             numeromesa=4;
         }
-
-
 
         //Base en modo escritura
         BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
