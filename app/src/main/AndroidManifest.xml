@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyecto_grupo_3">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_grupo_3">
+        <activity
+            android:name=".escaner"
+            android:exported="false" />
+        <activity
+            android:name=".twitter"
+            android:exported="false" />
+        <activity
+            android:name=".instagram"
+            android:exported="false" />
+        <activity
+            android:name=".facebook"
+            android:exported="false" />
         <activity
             android:name=".Pantalla_Carrito"
             android:exported="false" />

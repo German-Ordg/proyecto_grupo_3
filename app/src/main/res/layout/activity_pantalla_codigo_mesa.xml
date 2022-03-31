@@ -7,20 +7,47 @@
     android:background="@mipmap/fondo3"
     tools:context=".Pantalla_Codigo_Mesa">
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="96dp"
-        android:layout_height="56dp"
-        android:background="@color/white"
-        android:ems="10"
-        android:inputType="number"
+    <ImageView
+        android:id="@+id/insta"
+        android:layout_width="79dp"
+        android:layout_height="67dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="conectarInstagram"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.638"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.524"
+        app:srcCompat="@mipmap/instagram" />
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_width="79dp"
+        android:layout_height="67dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="conectarFacebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524"
+        app:srcCompat="@mipmap/facebook" />
+
+    <ImageView
+        android:id="@+id/twitter"
+        android:layout_width="79dp"
+        android:layout_height="67dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="conectarTwitter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524"
+        app:srcCompat="@mipmap/gorjeo" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -30,37 +57,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128"
+        app:layout_constraintVertical_bias="0.063"
         app:srcCompat="@mipmap/logo1" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Número de Mesa:"
+        android:text="¡Siganos en nuestras redes sociales!"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.526" />
+        app:layout_constraintVertical_bias="0.414" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_secondary"
-        android:shadowColor="@color/black"
-        android:text="Continuar"
-        android:textColor="@color/white"
-        android:textColorHint="@color/purple_700"
+        android:layout_width="177dp"
+        android:layout_height="91dp"
+        android:text="Escanee nuestra encuesta de Satisfacción"
+        android:onClick="irescaner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.793"
-        app:rippleColor="@color/black"
-        app:strokeColor="@color/white" />
+        app:layout_constraintVertical_bias="0.757" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
