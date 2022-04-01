@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class instagram extends AppCompatActivity {
@@ -14,6 +15,8 @@ public class instagram extends AppCompatActivity {
         setContentView(R.layout.activity_instagram);
 
         WebView myWebView = (WebView) findViewById(R.id.webview);
+        WebSettings settings = myWebView.getSettings();
+        settings.setJavaScriptEnabled(true);
         myWebView.loadUrl("https://www.instagram.com/pizzahuthn/");
     }
 }
