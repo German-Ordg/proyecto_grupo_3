@@ -2,16 +2,12 @@ package com.example.proyecto_grupo_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-public class Pantalla_Pedidos extends AppCompatActivity {
+public class Pantalla_Pedidos2 extends AppCompatActivity {
 
     public static final String MESA1="mesa1";
     private Button boton1, boton2, boton3, boton4;
@@ -19,7 +15,9 @@ public class Pantalla_Pedidos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_pedidos);
+        setContentView(R.layout.activity_pantalla_pedidos2);
+        BaseDeDatos admin = new BaseDeDatos(this,"administrador",null,1);
+        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
         boton1 = (Button) findViewById(R.id.btnmes1);
         boton2 = (Button) findViewById(R.id.btnmes2);
         boton3 = (Button) findViewById(R.id.btnmes3);

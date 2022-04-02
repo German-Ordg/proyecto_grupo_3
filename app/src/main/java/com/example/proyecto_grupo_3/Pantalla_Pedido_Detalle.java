@@ -23,6 +23,14 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_pedido_detalle);
+
+        Intent intent = getIntent();
+
+        int mesa1 = intent.getIntExtra(Pantalla_Pedidos.MESA1,-1);
+
+
+        Toast.makeText(this,"Mesa: "+mesa1, Toast.LENGTH_SHORT).show();
+
     }
 
     public void select(View view) {
