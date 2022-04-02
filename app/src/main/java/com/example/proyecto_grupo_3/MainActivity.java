@@ -23,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase BaseDatos= admin.getWritableDatabase();
     }
 
-    public void Menu(View view){
-        Intent menu = new Intent(this,Pantalla_Menu.class);
-        startActivity(menu);
+    public void Cliente(View view){
+        Intent pagina = new Intent(this,Pantalla_Menu.class);
+        startActivity(pagina);
+    }
+    public void Empleado(View view){
+        Intent pagina = new Intent(this,Pantalla_Login.class);
+        startActivity(pagina);
     }
 }
