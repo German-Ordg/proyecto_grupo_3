@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(pagina);
     }
     public void Empleado(View view){
-        Intent pagina = new Intent(this,Tipo_Empleado.class);
+        Intent pagina = new Intent(this,Pantalla_Login.class);
         startActivity(pagina);
     }
 }

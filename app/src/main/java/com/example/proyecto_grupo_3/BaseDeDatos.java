@@ -53,6 +53,10 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
 
         BaseDeDatos.execSQL("insert into Categoria_Producto (descripcion_categoria) values ('Pizza') ");
+        BaseDeDatos.execSQL("insert into Empleado_Puesto (codigo_puesto,descripcion_puesto) values (1,'mesero')");
+        BaseDeDatos.execSQL("insert into Empleado_Puesto (codigo_puesto,descripcion_puesto) values (2,'cajero')");
+        BaseDeDatos.execSQL("insert into Empleados (codigo_empleado,codigo_puesto,nombre_empleado,apellido_empleado,numero_identidad_empleado,fecha_nacimiento,fecha_ingreso,num_telefono,genero) values (1,1,'Erick','Moncada','0801200017209','2000-07-25','2022-03-28','99224455','M')");
+        BaseDeDatos.execSQL("insert into Empleados (codigo_empleado,codigo_puesto,nombre_empleado,apellido_empleado,numero_identidad_empleado,fecha_nacimiento,fecha_ingreso,num_telefono,genero) values (2,2,'German','Mejia','0801200017246','2000-11-10','2022-03-25','99224433','M')");
 
         BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('1') ");
         BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('2') ");
@@ -61,6 +65,11 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
         BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Pendiente') ");
         BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Entregado') ");
+        BaseDeDatos.execSQL("insert into Estado (codigo_estado,descripcion_estado) values (3,'activo') ");
+        BaseDeDatos.execSQL("insert into Estado (codigo_estado,descripcion_estado) values (4,'inactivo') ");
+
+        BaseDeDatos.execSQL("insert into Usuario (codigo_empleado,nombre_usuario,contrasena,correo_electronico,codigo_estado) values (1,'Usuario1','admin','usuario1@gmail.com',3) ");
+        BaseDeDatos.execSQL("insert into Usuario (codigo_empleado,nombre_usuario,contrasena,correo_electronico,codigo_estado) values (2,'Usuario2','admin','usuario2@gmail.com',3) ");
 
 
         BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Napolitana',150) ");
