@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnEmpleado"
+        android:id="@+id/btnCajero"
         android:layout_width="178dp"
         android:layout_height="121dp"
         android:backgroundTint="#FF0000"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.388" />
 
     <Button
-        android:id="@+id/btnCliente"
+        android:id="@+id/btnMesero"
         android:layout_width="178dp"
         android:layout_height="121dp"
         android:backgroundTint="#FF0000"

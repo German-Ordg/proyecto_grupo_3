@@ -14,12 +14,13 @@ public class Tipo_Empleado extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_empleado);
     }
 
-    public void Cajero(View view){
-        Intent cajero = new Intent(this,pantalla_pedido_detalle2.class);
-        startActivity(cajero);
-    }
     public void Mesero(View view){
-        Intent mesero = new Intent(this,Pantalla_Pedido_Detalle.class);
+        Intent mesero = new Intent(this,Pantalla_Pedidos.class);
         startActivity(mesero);
+    }
+
+    public void Cajero(View view){
+        Intent cajero= new Intent(this,Pantalla_Pedidos3.class);
+        startActivity(cajero);
     }
 }

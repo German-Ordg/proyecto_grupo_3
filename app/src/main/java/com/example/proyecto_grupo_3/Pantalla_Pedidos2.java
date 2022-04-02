@@ -16,35 +16,33 @@ public class Pantalla_Pedidos2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_pedidos2);
-        BaseDeDatos admin = new BaseDeDatos(this,"administrador",null,1);
-        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
         boton1 = (Button) findViewById(R.id.btnmes1);
         boton2 = (Button) findViewById(R.id.btnmes2);
         boton3 = (Button) findViewById(R.id.btnmes3);
         boton4 = (Button) findViewById(R.id.btnmes4);
         boton1.setOnClickListener((view) ->{
-            Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
+            Intent intent = new Intent(this,Pantalla_Pedido_Detalle3.class) ;
             mesa1=1;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
 
         });
         boton2.setOnClickListener((view) ->{
-            Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
+            Intent intent = new Intent(this,Pantalla_Pedido_Detalle3.class) ;
             mesa1=2;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
 
         });
         boton3.setOnClickListener((view) ->{
-            Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
+            Intent intent = new Intent(this,Pantalla_Pedido_Detalle3.class) ;
             mesa1=3;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
 
         });
         boton4.setOnClickListener((view) ->{
-            Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
+            Intent intent = new Intent(this,Pantalla_Pedido_Detalle3.class) ;
             mesa1=4;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);

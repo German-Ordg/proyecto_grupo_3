@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class pantalla_pedido_detalle2 extends AppCompatActivity {
+public class Pantalla_Pedido_Detalle3 extends AppCompatActivity {
 
     //Variables
     private TextView Especial;
@@ -30,10 +30,8 @@ public class pantalla_pedido_detalle2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_pedido_detalle2);
-    }
+        setContentView(R.layout.activity_pantalla_pedido_detalle3);
 
-    public  void Mostrar(View view){
         Especial = (TextView) findViewById(R.id.txtespecialp);
         Cantidad = (TextView) findViewById(R.id.txtcantidadp);
         Masa = (TextView) findViewById(R.id.txtmasap);
@@ -86,9 +84,11 @@ public class pantalla_pedido_detalle2 extends AppCompatActivity {
 
         Mesa.setText(codigo);
         String totalstring = Total.getText().toString();
+
         totaltotal = Integer.parseInt(totalstring);
         String cantidadstring = Cantidad.getText().toString();
         cantidadcantidad = Integer.parseInt(cantidadstring);
+
         totalfinal = totaltotal * cantidadcantidad;
         String imprimirtotal = String.valueOf(totalfinal);
         Total.setText(imprimirtotal);
@@ -108,6 +108,10 @@ public class pantalla_pedido_detalle2 extends AppCompatActivity {
             Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
 
         }
+    }
+
+    public void Cancelar(View view){
+
     }
 
     public void Salir(View view){
