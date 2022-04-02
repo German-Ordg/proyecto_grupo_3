@@ -20,6 +20,8 @@ public class Pantalla_Pedidos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_pedidos);
+        BaseDeDatos admin = new BaseDeDatos(this,"administrador",null,1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         boton1 = (Button) findViewById(R.id.btnmes1);
         boton2 = (Button) findViewById(R.id.btnmes2);
         boton3 = (Button) findViewById(R.id.btnmes3);
