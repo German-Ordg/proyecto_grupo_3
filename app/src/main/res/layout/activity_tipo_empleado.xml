@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/fondo2"
-    tools:context=".MainActivity">
+    tools:context=".Tipo_Empleado">
 
     <Button
         android:id="@+id/btnEmpleado"
         android:layout_width="178dp"
         android:layout_height="121dp"
         android:backgroundTint="#FF0000"
-        android:onClick="Empleado"
-        android:text="Empleado"
+        android:onClick="Cajero"
+        android:text="Cajero"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +27,8 @@
         android:layout_width="178dp"
         android:layout_height="121dp"
         android:backgroundTint="#FF0000"
-        android:onClick="Cliente"
-        android:text="Cliente"
+        android:onClick="Mesero"
+        android:text="Mesero"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

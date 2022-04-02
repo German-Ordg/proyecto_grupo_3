@@ -199,6 +199,9 @@ public class Detalles_Menu extends AppCompatActivity {
         if(mesa3.isChecked()==false){mesa3.setError("Seleccione una opcion");}
         if(mesa4.isChecked()==false){mesa4.setError("Seleccione una opcion");
 
+            Intent main = new Intent(this,MainActivity.class);
+            startActivity(main);
+
         }
     }
 }

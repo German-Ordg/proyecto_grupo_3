@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Cliente(View view){
-        Intent pagina = new Intent(this,Pantalla_Pedidos.class);
+        Intent pagina = new Intent(this,Pantalla_Menu.class);
         startActivity(pagina);
     }
     public void Empleado(View view){
-        Intent pagina = new Intent(this,Pantalla_Menu.class);
+        Intent pagina = new Intent(this,Tipo_Empleado.class);
         startActivity(pagina);
     }
 }
