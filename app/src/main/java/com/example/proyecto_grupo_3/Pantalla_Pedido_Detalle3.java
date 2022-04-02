@@ -2,6 +2,7 @@ package com.example.proyecto_grupo_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -111,6 +112,17 @@ public class Pantalla_Pedido_Detalle3 extends AppCompatActivity {
     }
 
     public void Cancelar(View view){
+        int estado= 2;
+
+        BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
+        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
+
+        //Update de Estado de Pedido
+        ContentValues valor= new ContentValues();
+        valor.put("codigo_estado", estado);
+
+        BaseDatos.update("Pedidos", valor, orden1, null);
+        Toast.makeText(this, "Orden Cancelada", Toast.LENGTH_SHORT).show();
 
     }
 
