@@ -184,18 +184,24 @@ public class Detalles_Menu extends AppCompatActivity {
            }
 
             //Validacion Campos Vacios
-            }if(masa1.isChecked()==false){masa1.setError("Seleccione una opcion");}
-                if(masa2.isChecked()==false){masa2.setError("Seleccione una opcion");}
-                if(masa3.isChecked()==false){masa3.setError("Seleccione una opcion");}
+           if (masa1.isChecked() == false&&masa2.isChecked() == false&&masa3.isChecked() == false) {
+               masa1.setError("Seleccione una opcion");
+               masa2.setError("Seleccione una opcion");
+               masa3.setError("Seleccione una opcion");
+           }
 
-                if(tam1.isChecked()==false){tam1.setError("Seleccione una opcion");}
-                if(tam2.isChecked()==false){tam2.setError("Seleccione una opcion");}
-                if(tam3.isChecked()==false){tam3.setError("Seleccione una opcion");}
+           if (tam1.isChecked() == false&&tam2.isChecked() == false&&tam3.isChecked() == false) {
+               tam1.setError("Seleccione una opcion");
+               tam2.setError("Seleccione una opcion");
+               tam3.setError("Seleccione una opcion");
+           }
 
-                if(mesa1.isChecked()==false){mesa1.setError("Seleccione una opcion");}
-                if(mesa2.isChecked()==false){mesa2.setError("Seleccione una opcion");}
-                if(mesa3.isChecked()==false){mesa3.setError("Seleccione una opcion");}
-                if(mesa4.isChecked()==false){mesa4.setError("Seleccione una opcion");
+           if (mesa1.isChecked() == false && mesa2.isChecked() == false && mesa3.isChecked() == false && mesa4.isChecked() == false) {
+               mesa1.setError("Seleccione una opcion");
+               mesa2.setError("Seleccione una opcion");
+               mesa3.setError("Seleccione una opcion");
+               mesa4.setError("Seleccione una opcion");
+           }
 
        }
     }
