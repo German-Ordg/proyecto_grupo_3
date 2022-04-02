@@ -8,7 +8,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Pantalla_Pedido_Detalle extends AppCompatActivity {
     //Variables
@@ -19,63 +21,101 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
     private TextView Mesa;
     private TextView Total;
 
+    int totaltotal;
+    int cantidadcantidad;
+    int totalfinal;
+    String orden1;
+    int orden;
+    String producto1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_pedido_detalle);
-    }
+        Especial=(TextView) findViewById(R.id.txtespecialp);
+        Cantidad=(TextView) findViewById(R.id.txtcantidadp);
+        Masa=(TextView) findViewById(R.id.txtmasap);
+        Tamaño=(TextView) findViewById(R.id.txttamañop);
+        Mesa=(TextView) findViewById(R.id.txtmesap);
+        Total=(TextView) findViewById(R.id.txttotalp);
 
-    public void select(View view) {
-        //Base en modo escritura
+
+
+
+
+
+    }public void buscar(View view) {
+        Intent intent = getIntent();
+        int mesa1 = intent.getIntExtra(Pantalla_Pedidos.MESA1,-1);
         BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-        Cursor c = BaseDeDatos.rawQuery("SELECT cantidad,precio,masa,tamaño from Ordenes", null);
+        SQLiteDatabase BaseDatos = admin.getWritableDatabase();
+        String codigo = String.valueOf(mesa1);
 
-        Cantidad.setText(c.getString(2));
-        Total.setText(c.getString(3));
-        Masa.setText(c.getString(4));
-        Tamaño.setText(c.getString(5));
+        if(!codigo.isEmpty()){
+            Cursor fila = BaseDatos.rawQuery("select codigo_orden from Pedidos where numero_mesa = "
+                    +codigo,null);
+            if(fila.moveToFirst()){
+                orden1=(fila.getString(0));
 
-        if (c != null) {
-            c.moveToFirst();
-            do {
-                //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                @SuppressLint("Range") String cantidad = c.getString(c.getColumnIndex("cantidad"));
-                @SuppressLint("Range") String precio = c.getString(c.getColumnIndex("precio"));
-                @SuppressLint("Range") String masa = c.getString(c.getColumnIndex("masa"));
-                @SuppressLint("Range") String tamaño = c.getString(c.getColumnIndex("tamaño"));
-            } while (c.moveToNext());
+            }else{
+                Toast.makeText(this,"El codigo ingresado no existe",Toast.LENGTH_SHORT).show();
 
-            Cursor d = BaseDeDatos.rawQuery("SELECT codigo_producto from Productos", null);
-
-            if (d != null) {
-                d.moveToFirst();
-                do {
-                    //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                    @SuppressLint("Range") String especialidad = c.getString(c.getColumnIndex("codigo_producto"));
-                } while (d.moveToNext());
-
-                Cursor e = BaseDeDatos.rawQuery("SELECT numero_mesa from Pedidos", null);
-
-                if (e != null) {
-                    e.moveToFirst();
-                    do {
-                        //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                        @SuppressLint("Range") String mesa = c.getString(c.getColumnIndex("numero_mesa"));
-                    } while (e.moveToNext());
-
-                    Especial = (TextView) findViewById(R.id.txtespecialp);
-                    Cantidad = (TextView) findViewById(R.id.txtespecialp);
-                    Masa = (TextView) findViewById(R.id.txtespecialp);
-                    Tamaño = (TextView) findViewById(R.id.txtespecialp);
-
-
-
-                }
             }
+
+        }else{
+            Toast.makeText(this,"Ingrese el codigo del alumno",Toast.LENGTH_SHORT).show();
+
+        }
+        Especial.setText(orden1);
+
+        if(!orden1.isEmpty()){
+            Cursor fila = BaseDatos.rawQuery("select codigo_producto, cantidad, precio, masa, tamaño from Ordenes where codigo_orden = "
+                    +orden1,null);
+            if(fila.moveToFirst()){
+                producto1=(fila.getString(0));
+                Cantidad.setText(fila.getString(1));
+                Total.setText(fila.getString(2));
+                Masa.setText(fila.getString(3));
+                Tamaño.setText(fila.getString(4));
+
+
+            }else{
+                Toast.makeText(this,"El codigo ingresado no existe",Toast.LENGTH_SHORT).show();
+
+            }
+
+        }else{
+            Toast.makeText(this,"Ingrese el codigo del alumno",Toast.LENGTH_SHORT).show();
         }
 
+        Mesa.setText(codigo);
+        String totalstring= Total.getText().toString();
+        totaltotal=Integer.parseInt(totalstring);
+        String cantidadstring= Cantidad.getText().toString();
+        cantidadcantidad=Integer.parseInt(cantidadstring);
+        totalfinal=totaltotal*cantidadcantidad;
+        String imprimirtotal = String.valueOf(totalfinal);
+        Total.setText(imprimirtotal);
+
+        if(!producto1.isEmpty()){
+            Cursor fila = BaseDatos.rawQuery("select descripcion_producto from Productos where codigo_producto = "
+                    +producto1,null);
+            if(fila.moveToFirst()){
+                Especial.setText(fila.getString(0));
+
+            }else{
+                Toast.makeText(this,"El codigo ingresado no existe",Toast.LENGTH_SHORT).show();
+
+            }
+
+        }else{
+            Toast.makeText(this,"Ingrese el codigo del alumno",Toast.LENGTH_SHORT).show();
+
+        }
+
+
     }
+
+// metodo busqueda
 
 }

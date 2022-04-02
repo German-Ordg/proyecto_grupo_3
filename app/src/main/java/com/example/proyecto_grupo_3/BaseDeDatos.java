@@ -62,6 +62,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Pendiente') ");
         BaseDeDatos.execSQL("insert into Estado (descripcion_estado) values ('Entregado') ");
 
+
         BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Napolitana',150) ");
         BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Pepperoni',160) ");
         BaseDeDatos.execSQL("insert into Productos (codigo_categoria, descripcion_producto, precio_actual) values (1,'Suprema',170) ");
