@@ -137,8 +137,10 @@ public class Detalles_Menu extends AppCompatActivity {
             numeromesa= 2;
         }else if(mesa3.isChecked()){
             numeromesa= 3;
-        }else{
+        }else if(mesa4.isChecked()){
             numeromesa=4;
+        }else{
+            numeromesa= 0;
         }
 
         //Base en modo escritura
@@ -146,8 +148,8 @@ public class Detalles_Menu extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
 
-       //Ingresar Ordenes
-       if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty()) {
+        //Ingresar Ordenes
+        if (numero != 0 && !tipomasa.isEmpty() && !tipotamano.isEmpty() && numeromesa != 0) {
             ContentValues ordenes = new ContentValues();
             Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
             ordenes.put("codigo_producto ", codigo);
@@ -160,49 +162,43 @@ public class Detalles_Menu extends AppCompatActivity {
             BaseDeDatos.insert("Ordenes", null, ordenes);
 
 
-           Cursor c = BaseDeDatos.rawQuery("SELECT max(codigo_orden) from Ordenes", null);
+            Cursor c = BaseDeDatos.rawQuery("SELECT max(codigo_orden) from Ordenes", null);
 
-           if (c != null) {
-               c.moveToFirst();
-               do {
-                   //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
-                   @SuppressLint("Range") String orden = c.getString(c.getColumnIndex("max(codigo_orden)"));
+            if (c != null) {
+                c.moveToFirst();
+                do {
+                    //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
+                    @SuppressLint("Range") String orden = c.getString(c.getColumnIndex("max(codigo_orden)"));
 
-           //Ingresar Pedidos
-           ContentValues pedidos = new ContentValues();
-           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
-           pedidos.put("codigo_orden", orden);
-           pedidos.put("codigo_estado", 1);
-           pedidos.put("numero_mesa", numeromesa);
+                    //Ingresar Pedidos
+                    ContentValues pedidos = new ContentValues();
+                    Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                    pedidos.put("codigo_orden", orden);
+                    pedidos.put("codigo_estado", 1);
+                    pedidos.put("numero_mesa", numeromesa);
 
-           Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
-           BaseDeDatos.insert("Pedidos", null, pedidos);
+                    Toast.makeText(this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                    BaseDeDatos.insert("Pedidos", null, pedidos);
 
-           //Cerrar Base de Datos
-            BaseDeDatos.close();
-               } while (c.moveToNext());
-           }
+                    //Cerrar Base de Datos
+                    BaseDeDatos.close();
+                } while (c.moveToNext());
+            }
 
             //Validacion Campos Vacios
-           if (masa1.isChecked() == false&&masa2.isChecked() == false&&masa3.isChecked() == false) {
-               masa1.setError("Seleccione una opcion");
-               masa2.setError("Seleccione una opcion");
-               masa3.setError("Seleccione una opcion");
-           }
+        }if(masa1.isChecked()==false){masa1.setError("Seleccione una opcion");}
+        if(masa2.isChecked()==false){masa2.setError("Seleccione una opcion");}
+        if(masa3.isChecked()==false){masa3.setError("Seleccione una opcion");}
 
-           if (tam1.isChecked() == false&&tam2.isChecked() == false&&tam3.isChecked() == false) {
-               tam1.setError("Seleccione una opcion");
-               tam2.setError("Seleccione una opcion");
-               tam3.setError("Seleccione una opcion");
-           }
+        if(tam1.isChecked()==false){tam1.setError("Seleccione una opcion");}
+        if(tam2.isChecked()==false){tam2.setError("Seleccione una opcion");}
+        if(tam3.isChecked()==false){tam3.setError("Seleccione una opcion");}
 
-           if (mesa1.isChecked() == false && mesa2.isChecked() == false && mesa3.isChecked() == false && mesa4.isChecked() == false) {
-               mesa1.setError("Seleccione una opcion");
-               mesa2.setError("Seleccione una opcion");
-               mesa3.setError("Seleccione una opcion");
-               mesa4.setError("Seleccione una opcion");
-           }
+        if(mesa1.isChecked()==false){mesa1.setError("Seleccione una opcion");}
+        if(mesa2.isChecked()==false){mesa2.setError("Seleccione una opcion");}
+        if(mesa3.isChecked()==false){mesa3.setError("Seleccione una opcion");}
+        if(mesa4.isChecked()==false){mesa4.setError("Seleccione una opcion");
 
-       }
+        }
     }
 }

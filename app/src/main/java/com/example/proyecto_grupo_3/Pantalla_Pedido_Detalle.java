@@ -19,18 +19,11 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
     private TextView Mesa;
     private TextView Total;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_pedido_detalle);
-
-        Intent intent = getIntent();
-
-        int mesa1 = intent.getIntExtra(Pantalla_Pedidos.MESA1,-1);
-
-
-        Toast.makeText(this,"Mesa: "+mesa1, Toast.LENGTH_SHORT).show();
-
     }
 
     public void select(View view) {
@@ -38,6 +31,11 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
         BaseDeDatos admin = new BaseDeDatos(this, "administrador", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
         Cursor c = BaseDeDatos.rawQuery("SELECT cantidad,precio,masa,tamaño from Ordenes", null);
+
+        Cantidad.setText(c.getString(2));
+        Total.setText(c.getString(3));
+        Masa.setText(c.getString(4));
+        Tamaño.setText(c.getString(5));
 
         if (c != null) {
             c.moveToFirst();
@@ -72,8 +70,12 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
                     Masa = (TextView) findViewById(R.id.txtespecialp);
                     Tamaño = (TextView) findViewById(R.id.txtespecialp);
 
+
+
                 }
             }
         }
+
     }
+
 }
