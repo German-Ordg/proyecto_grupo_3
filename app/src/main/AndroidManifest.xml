@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_grupo_3">
         <activity
+            android:name=".pantalla_pedido_detalle2"
+            android:exported="false" />
+        <activity
             android:name=".Detalles_Menu"
             android:exported="false" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".Pantalla_Pedidos"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".Pantalla_Login"
             android:exported="false" />
