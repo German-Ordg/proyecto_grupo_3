@@ -54,6 +54,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
         BaseDeDatos.execSQL("insert into Categoria_Producto (descripcion_categoria) values ('Pizza') ");
 
+
         BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('1') ");
         BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('2') ");
         BaseDeDatos.execSQL("insert into Codigo_qr (codigo_qr) values ('3') ");
