@@ -51,15 +51,14 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
                     + codigo, null);
             if (fila.moveToFirst()) {
                 orden1 = (fila.getString(0));
-
             } else {
-                Toast.makeText(this, "El codigo ingresado no existe", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
+                setContentView(R.layout.activity_pantalla_pedidos);
             }
 
         } else {
-            Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.activity_pantalla_pedidos);
         }
         Especial.setText(orden1);
 
@@ -75,12 +74,13 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
 
 
             } else {
-                Toast.makeText(this, "El codigo ingresado no existe", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
+                setContentView(R.layout.activity_pantalla_pedidos);
             }
 
         } else {
-            Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.activity_pantalla_pedidos);
         }
 
         Mesa.setText(codigo);
@@ -102,12 +102,12 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
                 Especial.setText(fila.getString(0));
 
             } else {
-                Toast.makeText(this, "El codigo ingresado no existe", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
+                setContentView(R.layout.activity_pantalla_pedidos);
             }
 
         } else {
-            Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
 
         }
     }

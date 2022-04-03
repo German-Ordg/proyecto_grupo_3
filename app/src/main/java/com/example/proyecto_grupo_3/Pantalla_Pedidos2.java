@@ -46,7 +46,6 @@ public class Pantalla_Pedidos2 extends AppCompatActivity {
             mesa1=4;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
-
         });
     }
 

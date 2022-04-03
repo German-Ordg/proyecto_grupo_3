@@ -2,6 +2,7 @@ package com.example.proyecto_grupo_3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -48,13 +49,15 @@ public class Pantalla_Pedido_Detalle3 extends AppCompatActivity {
 
         if (!codigo.isEmpty()) {
             Cursor fila = BaseDatos.rawQuery("select codigo_orden from Pedidos where numero_mesa = "
-                    + codigo, null);
+                    + codigo +" and codigo_estado = 1", null);
+
             if (fila.moveToFirst()) {
                 orden1 = (fila.getString(0));
 
             } else {
+                Intent pantalla= new Intent(this,Pantalla_Pedido_Detalle3.class);
+                startActivity(pantalla);
                 Toast.makeText(this, "El codigo ingresado no existe", Toast.LENGTH_SHORT).show();
-
             }
 
         } else {
@@ -121,7 +124,7 @@ public class Pantalla_Pedido_Detalle3 extends AppCompatActivity {
         ContentValues valor= new ContentValues();
         valor.put("codigo_estado", estado);
 
-        BaseDatos.update("Pedidos", valor, orden1, null);
+        BaseDatos.update("Pedidos", valor, "codigo_orden = "+orden1, null);
         Toast.makeText(this, "Orden Cancelada", Toast.LENGTH_SHORT).show();
 
     }

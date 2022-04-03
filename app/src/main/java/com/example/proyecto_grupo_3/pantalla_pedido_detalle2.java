@@ -81,7 +81,7 @@ public class pantalla_pedido_detalle2 extends AppCompatActivity {
             }
 
         } else {
-            Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
         }
 
         Mesa.setText(codigo);
@@ -100,12 +100,12 @@ public class pantalla_pedido_detalle2 extends AppCompatActivity {
                 Especial.setText(fila.getString(0));
 
             } else {
-                Toast.makeText(this, "El codigo ingresado no existe", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
 
             }
 
         } else {
-            Toast.makeText(this, "Ingrese el codigo del alumno", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Esta mesa no ha realizado ninguna orden", Toast.LENGTH_SHORT).show();
 
         }
     }
