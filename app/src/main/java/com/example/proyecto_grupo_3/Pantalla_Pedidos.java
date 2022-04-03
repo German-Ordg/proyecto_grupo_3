@@ -34,7 +34,7 @@ public class Pantalla_Pedidos extends AppCompatActivity {
                 //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
                 @SuppressLint("Range") int cod_estado = c.getInt(c.getColumnIndex("codigo_estado"));
                 if (cod_estado == 1) {
-                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle3.class);
+                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle.class);
                     mesa1 = 1;
                     intent.putExtra(MESA1, mesa1);
                     startActivity(intent);
@@ -52,7 +52,7 @@ public class Pantalla_Pedidos extends AppCompatActivity {
                 //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
                 @SuppressLint("Range") int cod_estado = c.getInt(c.getColumnIndex("codigo_estado"));
                 if (cod_estado == 1) {
-                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle3.class);
+                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle.class);
                     mesa1 = 2;
                     intent.putExtra(MESA1, mesa1);
                     startActivity(intent);
@@ -71,7 +71,7 @@ public class Pantalla_Pedidos extends AppCompatActivity {
                 //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
                 @SuppressLint("Range") int cod_estado = c.getInt(c.getColumnIndex("codigo_estado"));
                 if (cod_estado == 1) {
-                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle3.class);
+                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle.class);
                     mesa1 = 3;
                     intent.putExtra(MESA1, mesa1);
                     startActivity(intent);
@@ -89,7 +89,7 @@ public class Pantalla_Pedidos extends AppCompatActivity {
                 //Asignamos el valor en nuestras variables para usarlos en lo que necesitemos
                 @SuppressLint("Range") int cod_estado = c.getInt(c.getColumnIndex("codigo_estado"));
                 if (cod_estado == 1) {
-                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle3.class);
+                    Intent intent = new Intent(this, Pantalla_Pedido_Detalle.class);
                     mesa1 = 4;
                     intent.putExtra(MESA1, mesa1);
                     startActivity(intent);
