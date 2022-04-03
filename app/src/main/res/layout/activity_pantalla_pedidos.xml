@@ -71,8 +71,8 @@
 
                             <Button
                                 android:id="@+id/btnmes1"
-                                android:layout_width="85dp"
-                                android:layout_height="48dp"
+                                android:layout_width="96dp"
+                                android:layout_height="50dp"
                                 android:text="@string/mesa1" />
                         </LinearLayout>
 
@@ -119,8 +119,8 @@
 
                             <Button
                                 android:id="@+id/btnmes2"
-                                android:layout_width="85dp"
-                                android:layout_height="48dp"
+                                android:layout_width="96dp"
+                                android:layout_height="50dp"
                                 android:text="@string/mesa2" />
                         </LinearLayout>
 
@@ -168,8 +168,8 @@
 
                             <Button
                                 android:id="@+id/btnmes3"
-                                android:layout_width="85dp"
-                                android:layout_height="48dp"
+                                android:layout_width="96dp"
+                                android:layout_height="50dp"
                                 android:text="@string/mesa3" />
                         </LinearLayout>
 
@@ -217,8 +217,8 @@
 
                             <Button
                                 android:id="@+id/btnmes4"
-                                android:layout_width="85dp"
-                                android:layout_height="48dp"
+                                android:layout_width="96dp"
+                                android:layout_height="50dp"
                                 android:text="@string/mesa4" />
                         </LinearLayout>
 

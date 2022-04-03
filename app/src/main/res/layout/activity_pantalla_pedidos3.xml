@@ -71,8 +71,8 @@
 
                             <Button
                                 android:id="@+id/btnmes1"
-                                android:layout_width="85dp"
-                                android:layout_height="48dp"
+                                android:layout_width="86dp"
+                                android:layout_height="80dp"
                                 android:text="@string/mesa1" />
                         </LinearLayout>
 
