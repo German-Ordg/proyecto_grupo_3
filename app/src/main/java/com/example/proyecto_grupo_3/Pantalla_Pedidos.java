@@ -25,28 +25,24 @@ public class Pantalla_Pedidos extends AppCompatActivity {
             mesa1=1;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
-
         });
         boton2.setOnClickListener((view) ->{
             Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
             mesa1=2;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
-
         });
         boton3.setOnClickListener((view) ->{
             Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
             mesa1=3;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
-
         });
         boton4.setOnClickListener((view) ->{
             Intent intent = new Intent(this,Pantalla_Pedido_Detalle.class) ;
             mesa1=4;
             intent.putExtra(MESA1,mesa1);
             startActivity(intent);
-
         });
     }
 
