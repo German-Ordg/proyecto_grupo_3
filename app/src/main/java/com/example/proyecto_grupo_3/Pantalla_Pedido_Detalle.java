@@ -48,7 +48,7 @@ public class Pantalla_Pedido_Detalle extends AppCompatActivity {
 
         if (!codigo.isEmpty()) {
             Cursor fila = BaseDatos.rawQuery("select codigo_orden from Pedidos where numero_mesa = "
-                    + codigo, null);
+                    + codigo +" and codigo_estado = 1", null);
             if (fila.moveToFirst()) {
                 orden1 = (fila.getString(0));
             } else {
